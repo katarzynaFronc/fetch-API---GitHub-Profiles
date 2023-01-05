@@ -4,9 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
-    <script src="./app.js" type="module"></script>
+    <section class="search-bar">
+      <label class="input__label" for="filterByInfos">
+        <input placeholder="Search a Github User" class="input__field" id="search" type="text" />
+      </label>
+    </section>
+
+    <div>
+      <div id="root" class="card">
+        <div id="avatar"></div>
+        <div id="dates">
+          <div id="user"></div>
+          <div id="name">name</div>
+          <div id="description">description</div>
+          <div id="followers">followers</div>
+          <div id="following">following</div>
+          <div id="repositories">repositories</div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
