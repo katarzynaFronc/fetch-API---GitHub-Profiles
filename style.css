@@ -1,0 +1,106 @@
+:root {
+  --color--primary-violet: hsl(264, 91%, 37%);
+  --color--primary-purple: hsl(308, 66%, 24%);
+  --color--search-color: hsl(263, 86%, 10%);
+  --color--bg-card-color: rgba(56, 18, 145, 0.3);
+  --color--search-text: hsl(252, 14%, 79%);
+  --color--avatar-frame: hsl(239, 63%, 21%);
+
+  font-family: "Lato", monospace;
+}
+
+body {
+  background: linear-gradient(135deg, var(--color--primary-violet), var(--color--primary-purple));
+  height: 100vh;
+}
+
+.input__field {
+  display: flex;
+  width: 180px;
+  height: 40px;
+  margin: auto;
+  margin-top: 100px;
+  padding-left: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(52, 11, 90);
+  color: aliceblue;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.input__field:focus {
+  outline: none;
+}
+
+.input__field::placeholder {
+  color: var(--color--search-text);
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 860px;
+  margin: auto;
+  margin-top: 30px;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: var(--color--bg-card-color);
+}
+
+#avatar {
+  display: flex;
+  height: 180px;
+  width: 180px;
+  margin: 50px 0px 50px 50px;
+}
+
+#avatar img {
+  border: 10px solid var(--color--avatar-frame);
+  border-radius: 50%;
+}
+
+#dates {
+  width: 500px;
+  padding: 50px;
+  padding-bottom: 0;
+  color: white;
+}
+
+#name {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+#description {
+  margin-top: 30px;
+}
+
+#numberDatas {
+  width: 100%;
+  margin-top: 30px;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+#repos {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin-top: 30px;
+  padding: 0;
+}
+
+#repos li {
+  margin: 2px;
+  padding: 5px 10px;
+  background-color: var(--color--avatar-frame);
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+#repos li:hover {
+  cursor: pointer;
+}
