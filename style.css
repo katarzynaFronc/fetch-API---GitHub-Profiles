@@ -92,15 +92,13 @@ body {
   padding: 0;
 }
 
-#repos li {
+#repos a {
   margin: 2px;
   padding: 5px 10px;
   background-color: var(--color--avatar-frame);
   border: none;
   border-radius: 5px;
   font-size: 0.8rem;
-}
-
-#repos li:hover {
-  cursor: pointer;
+  color: var(--color--search-text);
+  text-decoration: none;
 }
