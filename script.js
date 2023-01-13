@@ -1,5 +1,5 @@
-const baseUrl = "https://api.github.com";
-const defaultUrl = "https://api.github.com/users/dominikmlynarczyk";
+import baseUrl from "./utils/baseUrl.js";
+import defaultUrl from "./utils/defaultUrl.js";
 
 const userAvatar = document.getElementById("avatar");
 const userName = document.getElementById("name");
@@ -22,7 +22,7 @@ function removeRepos() {
 
 async function defaultUserRepos() {
   const addRepos = document.getElementById("repos");
-  await fetch(`${baseUrl}/users/dominikmlynarczyk/repos`)
+  await fetch(`${defaultUrl}/repos`)
     .then((result) => result.json())
     .then(function (data) {
       data.forEach((repo) => {
@@ -55,7 +55,7 @@ function searchUserRepos() {
 //--------------------------default user--------------------------
 
 async function defaultUser() {
-  await fetch(`${baseUrl}/users/dominikmlynarczyk`)
+  await fetch(`${defaultUrl}`)
     .then((result) => result.json())
     .then((user) => {
       userAvatar.innerHTML = `<img src="${user.avatar_url}"/>`;
