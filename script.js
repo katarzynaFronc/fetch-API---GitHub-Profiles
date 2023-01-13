@@ -10,11 +10,19 @@ const userRepositories = document.getElementById("repositories");
 const userRepos = document.getElementById("repos");
 const userSearch = document.querySelector(".input__field");
 
+//--------------------------remove repos--------------------------
+
+function removeRepos() {
+  while (userRepos.firstChild) {
+    userRepos.removeChild(userRepos.firstChild);
+  }
+}
+
 //-----------------------default user's repos----------------------
 
 async function defaultUserRepos() {
   const addRepos = document.getElementById("repos");
-  await fetch(`${defaultUrl}/repos`)
+  await fetch(`${baseUrl}/users/dominikmlynarczyk/repos`)
     .then((result) => result.json())
     .then(function (data) {
       data.forEach((repo) => {
@@ -26,8 +34,10 @@ async function defaultUserRepos() {
 }
 
 //-----------------------search user's repos----------------------
+
 function searchUserRepos() {
   userSearch.addEventListener("change", function () {
+    removeRepos();
     let userSearch = document.querySelector(".input__field").value;
     const addRepos = document.getElementById("repos");
     fetch(`${baseUrl}/users/${userSearch}/repos`)
@@ -45,7 +55,7 @@ function searchUserRepos() {
 //--------------------------default user--------------------------
 
 async function defaultUser() {
-  await fetch(`${defaultUrl}`)
+  await fetch(`${baseUrl}/users/dominikmlynarczyk`)
     .then((result) => result.json())
     .then((user) => {
       userAvatar.innerHTML = `<img src="${user.avatar_url}"/>`;
@@ -74,6 +84,7 @@ async function searchUser() {
         userRepositories.innerHTML = `${user.public_repos} repositories`;
       });
   });
+
   searchUserRepos();
 }
 searchUser();
